@@ -1,4 +1,7 @@
-output "hadley_resource_virtual_network_id" {
-  value = azurerm_virtual_network.hadley_resource.id
+output "hadley_resource_vpc_name" {
+  value = aws_vpc.hadley_resource.name
 }
 
+output "hadley_resource_vpc_id" {
+  value = aws_vpc.hadley_resource.id
+}

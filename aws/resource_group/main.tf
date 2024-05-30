@@ -1,7 +1,14 @@
+resource "aws_resourcegroups_group" "hadley_resource" {
+  name     = var.resource_group_name
+  description = var.description
 
-  resource "aws_vpc" "hadley_resource" {
-  cidr_block       = var.cidr_block
-  instance_tenancy = var.instance_tenancy
+  resource_query {
+    query = jsonencode({
+      ResourceTypeFilters = var.resourceTypeFilters
+      TagFilters = var.tagFilters
+    })
+  }
+
 
 
   tags = {
