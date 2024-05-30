@@ -22,10 +22,11 @@ locals {
 
 
   # Extract the variables we need for easy access
-  account_id   = get_env("AWS_ACCOUNT_ID")
+  account_id          = get_env("AWS_ACCOUNT_ID")
+  access_key_id       = get_env("AWS_ACCESS_KEY_ID")
+  secret_access_key   = get_env("AWS_SECRET_ACCESS_KEY")
+  
   aws_region   = local.env_vars.locals.aws_region
-
-
 
 }
 
@@ -53,6 +54,7 @@ remote_state {
     key            = "key_remote_state"
     region         = "${local.aws_region}"
     dynamodb_table = "assdteus2016st001-tfstate-lock"
+    disable_bucket_update = true
   }
   generate = {
     path      = "backend.tf"

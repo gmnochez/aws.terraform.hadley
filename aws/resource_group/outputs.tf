@@ -3,5 +3,5 @@ output "hadley_resource_resource_group_name" {
 }
 
 output "hadley_resource_resource_group_id" {
-  value = azurerm_resource_group.hadley_resource.id
+  value = aws_resourcegroups_group.hadley_resource.id
 }
