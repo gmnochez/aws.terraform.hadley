@@ -1,24 +1,11 @@
 
-variable "resource_group_name" {
-  description = "Resource group name"
+variable "cidr_block" {
+  description = "Cidr Block"
 }
 
-variable "description" {
-  description = "Description"
+variable "instance_tenancy" {
+  description = "Instance Tenancy"
 }
-
-variable "resourceTypeFilters" {
-  description = "Lista de Tipo de Filtros"
-  type = list(string)
-  default = []
-}
-
-variable "tagFilters" {
-  description = "Lista de Tags"
-  type = list(any)
-  default = []
-}
-
 
 
 variable "tags" {
