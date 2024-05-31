@@ -10,4 +10,5 @@
       ipv6_cidr_blocks    = each.value.ipv6_cidr_blocks
       security_group_id   = var.security_group_id
       description         = each.value.description
+      prefix_list_ids     = each.value.prefix_list_ids
 }
