@@ -14,6 +14,7 @@ variable "security_rule" {
     cidr_blocks                 = list(string)
     ipv6_cidr_blocks            = list(string)
     description                 = string
+    prefix_list_ids             = list(string)  
   }))
 
   default = {}
